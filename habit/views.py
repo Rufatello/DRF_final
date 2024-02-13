@@ -18,7 +18,6 @@ class HabitCreateApiView(generics.CreateAPIView):
 class HabitListApiView(generics.ListAPIView):
     serializer_class = HabitSerializers
     queryset = Habit.objects.all()
-    permission_classes = [IsAuthenticated]
 
 
 class ReflexCreateApiView(generics.CreateAPIView):
