@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from habit.models import Habit, Reflex
 from habit.paginations import ReflexPagination
 from habit.serializers import HabitSerializers, ReflexSerializers, ReflexDetailSerializer
+from users.permissions import IsUser
 
 
 class HabitCreateApiView(generics.CreateAPIView):
@@ -46,17 +47,12 @@ class ReflexAPIView(generics.ListAPIView):
 
 class ReflexUpdateApiView(generics.UpdateAPIView):
     serializer_class = ReflexSerializers
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsUser]
     queryset = Reflex.objects.all()
-
-    def get_queryset(self):
-        return Reflex.objects.filter(user=self.request.user)
 
 
 class ReflexDestroyApiView(generics.DestroyAPIView):
     serializer_class = ReflexSerializers
     queryset = Reflex.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsUser]
 
-    def get_queryset(self):
-        return Reflex.objects.filter(user=self.request.user)

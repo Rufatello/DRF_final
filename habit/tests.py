@@ -11,7 +11,9 @@ class HabitTest(TestCase):
         self.user = User.objects.create(email='1@mail.ru', first_name='Rufat', last_name='Geydarov')
         self.client.login(username='1@mail.ru', password='12345')
         self.user.set_password('12345')
+
         self.user.save()
+        self.client.force_authenticate(self.user)
 
     def test_habit_create(self):
         data = {
