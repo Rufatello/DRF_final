@@ -8,3 +8,6 @@ celery
 redis
 djangorestframework-simplejwt
 requests
+coverage
+django-celery-beat
+drf_yasg
