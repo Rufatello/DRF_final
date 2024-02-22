@@ -1,5 +1,5 @@
 asgiref==3.7.2
-Django==5.0.2
+Django
 sqlparse==0.4.4
 djangorestframework
 pillow
@@ -9,5 +9,5 @@ redis
 djangorestframework-simplejwt
 requests
 coverage
-django-celery-beat
+django-celery-beat==2.5.0
 drf_yasg
