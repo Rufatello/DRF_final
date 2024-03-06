@@ -1,0 +1,4 @@
+Развернуть контейнер
+docker-compose build
+Запустить контейнер
+docker-compose up
